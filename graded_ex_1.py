@@ -1,7 +1,6 @@
-# Products available in the store by category
 import re
 
-
+# Products available in the store by category
 products = {
     "IT Products": [
         ("Laptop", 1000),
@@ -44,7 +43,6 @@ def display_sorted_products(products_list, sort_order="asc"):
     for index, (product, price) in enumerate(sorted_products, 1):
         print(f"{index}. {product}: ${price:.2f}")
 
-
 def display_products(products_list):
     for index, (product, price) in enumerate(products_list, 1):
         print(f"{index}. {product}: ${price:.2f}")
@@ -58,7 +56,6 @@ def add_to_cart(cart, product, quantity):
         cart[product] += quantity
     else:
         cart[product] = quantity
-
 
 def display_cart(cart):
     total_cost = 0
@@ -74,7 +71,6 @@ def display_cart(cart):
                     break
 
     print(f"Total cost: ${total_cost:.2f}")
-
 
 def generate_receipt(name, email, cart, total_cost, address):
     receipt = (
@@ -104,8 +100,6 @@ def validate_name(name):
         return False
     first_name, last_name = parts
     return all(part.isalpha() for part in parts)
-
-import re
 
 def validate_email(email):
     # Improved regex pattern to validate email address
