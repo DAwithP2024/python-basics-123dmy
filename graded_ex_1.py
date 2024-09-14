@@ -61,7 +61,6 @@ def display_cart(cart):
     total_cost = 0
     print("Cart contents:")
     for product, quantity in cart.items():
-        # Find the product's price
         for category_products in products.values():
             for p, price in category_products:
                 if p == product:
@@ -69,7 +68,6 @@ def display_cart(cart):
                     total_cost += total_price
                     print(f"{product} x{quantity}: ${total_price:.2f}")
                     break
-
     print(f"Total cost: ${total_cost:.2f}")
 
 def generate_receipt(name, email, cart, total_cost, address):
@@ -82,7 +80,6 @@ def generate_receipt(name, email, cart, total_cost, address):
     )
 
     for product, quantity in cart.items():
-        # Find the product's price
         for category_products in products.values():
             for p, price in category_products:
                 if p == product:
@@ -102,7 +99,6 @@ def validate_name(name):
     return all(part.isalpha() for part in parts)
 
 def validate_email(email):
-    # Improved regex pattern to validate email address
     pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
     return re.fullmatch(pattern, email) is not None
 
@@ -132,7 +128,6 @@ def main():
 
         cart = {}
         while True:
-            # Display products in the chosen category
             print(f"\nProducts in {category}:")
             display_products(products[category])
 
