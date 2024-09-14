@@ -2,7 +2,8 @@ import re
 
 # Validate Name (Only allows names with spaces and alphabets)
 def validate_name(name):
-    return bool(re.match(r'^[A-Za-z ]+$', name))
+    # Match names that contain only letters and spaces, and at least one space between words
+    return bool(re.match(r'^[A-Za-z]+( [A-Za-z]+)+$', name))
 
 # Validate Email (Basic email validation)
 def validate_email(email):
@@ -26,7 +27,7 @@ def display_categories():
         print("Invalid input. Please enter a number.")
         return None
 
-# Display sorted products
+
 def display_sorted_products(products_list, order):
     if order == "asc":
         return sorted(products_list, key=lambda x: x[1])
