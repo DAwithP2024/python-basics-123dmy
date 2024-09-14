@@ -1,4 +1,7 @@
 # Products available in the store by category
+import re
+
+
 products = {
     "IT Products": [
         ("Laptop", 1000),
@@ -100,7 +103,9 @@ def validate_name(name):
     return all(part.isalpha() for part in parts)
 
 def validate_email(email):
-    return "@" in email and "." in email
+    # Basic regex for email validation
+    pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+    return re.match(pattern, email) is not None
 
 def main():
     while True:
