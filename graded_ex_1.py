@@ -103,8 +103,8 @@ def validate_name(name):
     return all(part.isalpha() for part in parts)
 
 def validate_email(email):
-    # Basic regex for email validation
-    pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+    # Regex pattern to validate email address
+    pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
     return re.match(pattern, email) is not None
 
 def main():
